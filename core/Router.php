@@ -202,7 +202,7 @@ class Router
      */
     protected function getNamespace()
     {
-        $namespace = 'App\Controllers\\';
+        $namespace = 'app\Controllers\\';
 
         if (array_key_exists('namespace', $this->params)) $namespace .= $this->params['namespace'] . '\\';
 

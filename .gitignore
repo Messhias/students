@@ -6,3 +6,4 @@ bower
 .composer
 vendor
 composer.lock
+.env

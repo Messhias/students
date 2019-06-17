@@ -28,7 +28,7 @@ services:
 
   db:
     restart: always
-    container_name: database_educa
+    container_name: database_students
     image: mariadb:latest
     volumes:
       - /var/lib/mysql

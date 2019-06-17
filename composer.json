@@ -3,7 +3,8 @@
     "description": "Project to create a custom framework in php",
     "type": "php,, framework, class, OO",
     "require": {
-        "twig/twig": "^2.11"
+        "twig/twig": "^2.11",
+        "devscreencast/json-response": "^1.1"
     },
     "authors": [
         {
@@ -13,8 +14,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Core\\": "core/",
-            "App\\": "app/"
+            "core\\": "core/",
+            "app\\": "app/"
         }
     }
 }

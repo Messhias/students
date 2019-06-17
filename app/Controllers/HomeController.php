@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Controllers;
+namespace app\Controllers;
 
-use Core\Controller;
-use \Core\View;
+use app\Models\User;
+use core\Controller;
+use core\View;
 
 /**
- * Home controller
+ * HomeController controller
  *
  * PHP version 7.0
  */
-class Home extends Controller
+class HomeController extends Controller
 {
     /**
      * Show the index page
@@ -19,6 +20,7 @@ class Home extends Controller
      */
     public function indexAction()
     {
+        print_r(User::getAll());
         View::renderTemplate('Home/index.html');
     }
 }

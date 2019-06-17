@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace app\Models;
 
-use Core\Model;
+use core\Model;
 use PDO;
 
 /**
@@ -21,7 +21,7 @@ class User extends Model
     public static function getAll()
     {
         $db = static::getDB();
-        $stmt = $db->query('SELECT id, name FROM users');
+        $stmt = $db->query('SELECT * FROM students');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
