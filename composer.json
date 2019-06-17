@@ -1,0 +1,20 @@
+{
+    "name": "fabioconceicao/students",
+    "description": "Project to create a custom framework in php",
+    "type": "php,, framework, class, OO",
+    "require": {
+        "twig/twig": "^2.11"
+    },
+    "authors": [
+        {
+            "name": "Fabio William Conceição",
+            "email": "messhias@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        }
+    }
+}

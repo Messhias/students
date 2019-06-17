@@ -40,9 +40,9 @@ services:
       - MYSQL_ROOT_PASSWORD=docker
       - MYSQL_PASSWORD=docker
 
-#  composer:
-#    image: composer:latest
-#    command: install -vvv
-#    volumes:
-#      - ./:/app
+  composer:
+    image: composer:latest
+    command: install -vvv
+    volumes:
+      - ./:/app
 

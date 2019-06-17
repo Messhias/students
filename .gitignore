@@ -5,4 +5,4 @@ bower
 .idea
 .composer
 vendor
-
+composer.lock
