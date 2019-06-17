@@ -16,17 +16,17 @@ require dirname(__DIR__) . '/vendor/autoload.php';
  * Error and Exception handling
  */
 error_reporting(E_ALL);
-set_error_handler('core\Error::errorHandler');
-set_exception_handler('core\Error::exceptionHandler');
+set_error_handler('Core\Error::errorHandler');
+set_exception_handler('Core\Error::exceptionHandler');
 
 
 /**
  * Routing
  */
-$router = new core\Router();
+$router = new Core\Router();
 
 // Add the routes
-$router->add('', ['controller' => 'HomeController', 'action' => 'index']);
+$router->add('', ['controller' => 'HomeController', 'action' => 'index', "title"]);
 $router->add('{controller}/{action}');
 
 

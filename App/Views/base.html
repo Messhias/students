@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/DataTables/datatables.min.css"/>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js" type="application/javascript"></script>
+    <script src="js/bootstrap.bundle.min.js" type="application/javascript"></script>
+    <script src="js/custom.js" type="application/javascript"></script>
+</body>
+</html>
