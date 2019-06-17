@@ -31,7 +31,7 @@ class Framework
     {
         define("DS", DIRECTORY_SEPARATOR);
 
-        define("ROOT", getcwd() . DS);
+        define("ROOT", dirname(dirname (__FILE__)) . DS);
 
         define("APP_PATH", ROOT . 'application' . DS);
 
@@ -77,7 +77,7 @@ class Framework
         // Load core classes
         require CORE_PATH . "Controller.class.php";
         require CORE_PATH . "Loader.class.php";
-        require DB_PATH . "Mysql.class.php";
+        require DB_PATH . "MySQL.class.php";
         require CORE_PATH . "Model.class.php";
 
 
@@ -103,7 +103,7 @@ class Framework
     private static function dispatch()
     {
         // Instantiate the controller class and call its action method
-        $controller_name = CONTROLLER . "Controller";
+        $controller_name = CONTROLLER . "Controller.class";
 
         $action_name = ACTION . "Action";
 
@@ -120,8 +120,8 @@ class Framework
     private static function load($classname)
     {
         // Here simply autoload app’s controller and model classes
-        if (substr($classname, -10) == "Controller"){
-            // Controller
+        if (substr($classname, -10) == "Controller.class"){
+            // Controller.class
             require_once CURR_CONTROLLER_PATH . "$classname.class.php";
         } elseif (substr($classname, -5) == "Model"){
             // Model
