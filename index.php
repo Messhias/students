@@ -10,3 +10,9 @@
  * This framework, files and any data of this application can be used without any charges and limitation.
  *
  */
+
+require "framework/core/Framework.class.php";
+
+
+Framework::run();
+
