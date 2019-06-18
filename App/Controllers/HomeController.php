@@ -25,8 +25,8 @@ class HomeController extends ResourceController
      */
     public function indexAction()
     {
-        View::renderTemplate('Home/index.html', [
-            "students" => $this->getRepository()->get()
+        View::renderTemplate('Home/index.php', [
+            "students" => $this->getRepository()->get(),
         ]);
     }
 }
