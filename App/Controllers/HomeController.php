@@ -12,6 +12,11 @@ use Core\View;
  */
 class HomeController extends ResourceController
 {
+    /**
+     * HomeController constructor.
+     *
+     * @param $route_params
+     */
     public function __construct($route_params)
     {
         $this->setRepository(new UserRepository());

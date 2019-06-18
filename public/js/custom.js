@@ -2,8 +2,7 @@
 function init() {
     // init the datatable object.
     $('#students').DataTable({
-        "processing": true,
-        "serverSide": true,
+        processing: true,
     });
 }
 
@@ -25,11 +24,22 @@ function nameFilter() {
 // date added filter
 function dateAddedFilter() {
     const value = $("#date_added_filter").val();
-    $('#students').DataTable()
-        .search(value)
-        .draw();
+    if (value !== "") {
+        $('#students').DataTable()
+            .search(value)
+            .draw();
+    }
 }
 
+function add_new_button() {
+    $("#add_new").click(function() {
+        $("#container_add_new").toggle();
+    });
+}
+
+/**
+ * Inputs filters
+ */
 function inputsFilters() {
     /**
      * Associate the triggers functions to launch the filters.
@@ -49,4 +59,5 @@ function inputsFilters() {
 $(document).ready( function () {
     init();
     inputsFilters();
+    add_new_button();
 } );

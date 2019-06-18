@@ -25,9 +25,31 @@ set_exception_handler('Core\Error::exceptionHandler');
  */
 $router = new Core\Router();
 
-// Add the routes
+// home router
 $router->add('', ['controller' => 'HomeController', 'action' => 'index', "title"]);
 $router->add('{controller}/{action}');
+$router->add('/', ['controller' => 'HomeController', 'action' => 'index', "title"]);
+$router->add('{controller}/{action}');
+
+// students ajax api route
+$router->add('/students', ['controller' => 'StudentsController', 'action' => 'get', "title"]);
+$router->add('{controller}/{action}');
+
+// add new route
+
+$router->add('/students/add', [
+   'controller' => 'StudentsController',
+   'action' => 'create',
+]);
+$router->add('{controller}/{action}');
+
+// removing the ? after from students request in get action
+$url = explode("?" , $_SERVER['REQUEST_URI']);
+
+if (count($url) > 1) {
+    $url = $url[0];
+    $router->dispatch($url);
+} else
+    $router->dispatch($_SERVER['REQUEST_URI']);
 
 
-$router->dispatch($_SERVER['QUERY_STRING']);

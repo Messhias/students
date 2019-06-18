@@ -25,18 +25,18 @@ USE `students_docker`;
 -- Table `students_docker`.`students`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `students_docker`.`students` (
-                                                            `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-                                                            `first_name` VARCHAR(255) NOT NULL,
-                                                            `last_name` VARCHAR(255) NULL,
-                                                            `middle_name` VARCHAR(255) NOT NULL,
-                                                            `email` VARCHAR(80) NOT NULL UNIQUE ,
-                                                            `class` VARCHAR(120) NOT NULL,
-                                                            `guardian_name` VARCHAR(255) NOT NULL,
-                                                            `phone_number` VARCHAR(20) NOT NULL,
-                                                            `date_added` TIMESTAMP NOT NULL DEFAULT current_timestamp,
-                                                            `date_updated` TIMESTAMP NULL,
-                                                            `year_joined` TIMESTAMP NOT NULL DEFAULT current_timestamp)
-    ENGINE = InnoDB;
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `first_name` VARCHAR(255) NOT NULL,
+    `last_name` VARCHAR(255) NULL,
+    `middle_name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(80) NOT NULL UNIQUE ,
+    `class` VARCHAR(120) NOT NULL,
+    `guardian_name` VARCHAR(255) NOT NULL,
+    `phone_number` VARCHAR(20) NOT NULL,
+    `date_added` TIMESTAMP NOT NULL DEFAULT current_timestamp,
+    `date_updated` TIMESTAMP NULL,
+    `year_joined` TIMESTAMP NOT NULL DEFAULT current_timestamp)
+ENGINE = InnoDB;
 
 -- returning the sql to previously state.
 SET SQL_MODE=@OLD_SQL_MODE;
