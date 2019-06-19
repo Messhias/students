@@ -4,6 +4,7 @@
 namespace App\Repository;
 
 use App\Models\User;
+use Exception;
 use PDO;
 
 /**
@@ -76,34 +77,123 @@ class UserRepository extends Repository
      * @param array $data
      *
      * @return bool
-     * @throws \Exception
+     * @throws Exception
      */
     public function create($data = [])
     {
-        $columns = [];
-        $values = [];
-
-        foreach ($data as $key => $value) {
-            if ($key === "classroom") $key = "class";
-            $columns[] = $key;
-            if ($key == "year_joined") $values[] = "'" . date("Y-m-d H:m:s", $value) . "'";
-            else $values[] = "'" . $value . "'";
-         }
-        $columns = join(",", $columns);
-        $values = join(",", $values);
-        $query = "insert into students({$columns}) values({$values})";
-        $stmt = $this->getDbRepo();
 
         try {
+            $columns = [];
+            $values = [];
+
+            // removing the id index.
+            unset($data['id']);
+
+            foreach ($data as $key => $value) {
+                if ($key === "classroom") $key = "class";
+                $columns[] = $key;
+                if ($key == "year_joined") $values[] = "'" . date("Y-m-d H:m:s", strtotime($value)) . "'";
+                else $values[] = "'" . $value . "'";
+            }
+
+            $columns = join(",", $columns);
+            $values = join(",", $values);
+
+            $query = "insert into {$this->model->getTable()}({$columns}) values({$values})";
+
+            $stmt = $this->getDbRepo();
             $stmt->beginTransaction();
             $stmt->exec($query);
             $stmt->commit();
 
             return true;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $stmt->rollback();
             print_r($query);
             throw $e;
         }
     }
+
+    /**
+     * Find by ID.
+     *
+     * If the ID doesn't exist in the array collection returns false.
+     *
+     * @param array $data
+     *
+     * @return bool
+     * @throws Exception
+     */
+    public function find($data = [])
+    {
+        try {
+            if (!array_key_exists('id', $data)) return false;
+
+            $id = $data["id"];
+            $query = "select * from {$this->model->getTable()} where id = {$id}";
+            $stmt = $this->getDbRepo()->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    /**
+     * Update student entry in database.
+     *
+     * @param array $data
+     *
+     * @return bool
+     * @throws Exception
+     */
+    public function update($data = [])
+    {
+        try {
+            if (!array_key_exists('id', $data)) return false;
+            $update = [];
+
+            $id = $data["id"];
+            $data['date_updated'] = date("Y-m-d H:m:s");
+            unset($data['id']);
+
+            foreach ($data as $key => $value) {
+                if ($key == "classroom") $key = "class";
+
+                $update[] = $key . " = '" . $value . "'";
+            }
+
+            $values = join(",", $update);
+            $query = "update {$this->model->getTable()} set {$values} where id = {$id}";
+
+            $stmt = $this->getDbRepo();
+            $stmt->beginTransaction();
+            $stmt->exec($query);
+            $stmt->commit();
+
+            return true;
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function delete($data = [])
+    {
+        try {
+            if (!array_key_exists('id', $data)) return false;
+
+            $id = $data["id"];
+
+            $query = "delete from {$this->model->getTable()} where id = {$id}";
+
+            $stmt = $this->getDbRepo();
+            $stmt->beginTransaction();
+            $stmt->exec($query);
+            $stmt->commit();
+
+            return true;
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
 }

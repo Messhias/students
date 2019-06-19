@@ -22,57 +22,80 @@
             <h6>Add new</h6>
         </div>
         <div class="col-12">
-            <form method="post" action="students/add">
+            <form
+                method="post"
+                action="students/add"
+                id="header-form"
+                name="header-form"
+            >
+                <input type="hidden" name="id" id="id" value="" />
                 <input
                   placeholder="first name"
                   value=""
                   name="first_name"
                   id="first_name"
+                  maxlength="255"
                 />
                 <input
                     placeholder="middle name"
                     value=""
                     name="middle_name"
                     id="middle_name"
+                    maxlength="255"
                 />
                 <input
                     placeholder="last name"
                     value=""
                     name="last_name"
                     id="last_name"
+                    maxlength="255"
                 />
                 <input
                     placeholder="email"
                     value=""
                     name="email"
                     id="email"
+                    maxlength="80"
                 />
                 <input
                     placeholder="classroom"
                     value=""
                     name="classroom"
                     id="classrom"
+                    maxlength="120"
                 />
                 <input
                     placeholder="guardian name"
                     value=""
                     name="guardian_name"
                     id="guardian_name"
+                    maxlength="255"
                 />
                 <input
                     placeholder="phone number"
                     value=""
                     name="phone_number"
                     id="phone_number"
+                    maxlength="20"
                 />
                 <input
                     placeholder="year joined"
                     value=""
                     name="year_joined"
                     id="year_joined"
+                    type="date"
                 />
-                <button>
+                <button
+                    type="submit"
+                    id="form-submit-button"
+                >
                     Add new
+                </button>
+                <button
+                    type="button"
+                    id="close-form"
+                >
+                    Close form
                 </button>
             </form>
         </div>
@@ -179,12 +202,18 @@
                             </td>
                             <td>
                                 <button
-                                    class="btn btn-info"
+                                    class="btn btn-info edit-button"
+                                    name="edit-button"
+                                    id="edit-button-{{ student.id }}"
+                                    data-id="{{ student.id }}"
                                 >
                                     Edit
                                 </button>
                                 <button
                                     class="btn btn-danger"
+                                    name="delete-button"
+                                    id="delete-button"
+                                    data-id="{{ student.id }}"
                                 >
                                     Delete
                                 </button>

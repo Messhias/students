@@ -35,11 +35,31 @@ $router->add('{controller}/{action}');
 $router->add('/students', ['controller' => 'StudentsController', 'action' => 'get', "title"]);
 $router->add('{controller}/{action}');
 
-// add new route
-
+// add new student route
 $router->add('/students/add', [
    'controller' => 'StudentsController',
    'action' => 'create',
+]);
+$router->add('{controller}/{action}');
+
+// find student route
+$router->add('/students/find', [
+   'controller' => 'StudentsController',
+   'action' => 'find',
+]);
+$router->add('{controller}/{action}');
+
+// update students route
+$router->add('/students/edit', [
+    'controller' => 'StudentsController',
+    'action' => 'update',
+]);
+$router->add('{controller}/{action}');
+
+// delete students route
+$router->add('/students/delete', [
+    'controller' => 'StudentsController',
+    'action' => 'delete',
 ]);
 $router->add('{controller}/{action}');
 
