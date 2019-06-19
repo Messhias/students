@@ -617,7 +617,7 @@ And there's more we can list here.
 
 # Practices:
 
-To build this framework we use the best practices in PHP Development (or we try to do it):\
+To build this framework we use the best practices in PHP Development:
 
 - [SOLID](https://medium.com/thiago-aragao/solid-princ%C3%ADpios-da-programa%C3%A7%C3%A3o-orientada-a-objetos-ba7e31d8fb25).
 
