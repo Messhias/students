@@ -20,7 +20,7 @@ use Twig\Loader\FilesystemLoader;
  *
  * In this class we set up the views and render for the ender user.
  *
- * PHP version 7.0
+ * PHP version 7.1
  */
 class View
 {

@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Fabio William Conceição
+ */
 
 namespace App\Repository;
 
@@ -16,7 +19,8 @@ use Core\Model;
 abstract class Repository extends Model
 {
     /**
-     * Set up the repository
+     * Set up the repository and initiate the model into the repository
+     * application context.
      *
      * Repository constructor
      */

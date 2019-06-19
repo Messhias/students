@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Fabio William Conceição
+ */
+
 namespace Core;
 
 use Exception;
@@ -7,7 +11,7 @@ use Exception;
 /**
  * Base controller
  *
- * PHP version 7.0
+ * PHP version 7.1
  */
 abstract class Controller
 {

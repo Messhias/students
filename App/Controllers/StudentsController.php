@@ -1,10 +1,6 @@
 <?php
 /**
- * Created by fabioconceicao.
- * FILE: StudentsController.php
- * User: fabioconceicao
- * Date: 2019-06-18
- * Time: 02:25
+ * @author Fabio William Conceição
  */
 
 namespace App\Controllers;

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Fabio William Conceição
+ */
+
 namespace App\Controllers;
 
 use App\Repository\UserRepository;
@@ -8,7 +12,7 @@ use Core\View;
 /**
  * HomeController controller
  *
- * PHP version 7.0
+ * PHP version 7.1
  */
 class HomeController extends ResourceController
 {

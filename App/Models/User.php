@@ -1,13 +1,14 @@
 <?php
+/**
+ * @author Fabio William Conceição
+ */
 
 namespace App\Models;
 
-use Core\Model;
-
 /**
- * Example user model
+ * User (students) model.
  *
- * PHP version 7.0
+ * PHP version 7.1
  */
 class User
 {

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Fabio William Conceição
+ */
+
 namespace Core;
 
 use App\Config;
@@ -8,7 +12,7 @@ use ErrorException;
 /**
  * Error and exception handler
  *
- * PHP version 7.0
+ * PHP version 7.1
  */
 class Error
 {
