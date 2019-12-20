@@ -8,7 +8,7 @@ This repository it's test creation of an framework in **PHP**.
 Here's the following list of libraries / ger used to build the 
 framework.
 
-- [PHP7](https://www.php.net) – This framework is build based
+- [PHP 7.4](https://www.php.net) – This framework is build based
 on latest version of PHP, and the minimal version you need to run it it's **PHP 7.1**.
 
 - [Twig](https://twig.symfony.com/) – for template rendering.
@@ -17,11 +17,11 @@ on latest version of PHP, and the minimal version you need to run it it's **PHP 
 
 - [Composer](https://getcomposer.org/).
 
-- [Nginx](https://www.nginx.com/) - webserver
+- [Nginx](https://www.nginx.com/) - Web server.
 
-All those libraries / system in [Dockerfile](https://github.com/Messhias/students/blob/master/docker/php/Dockerfile), 
- [docker-compose.yml](https://github.com/Messhias/students/blob/master/docker-compose.yml) and 
- [composer.json](https://github.com/Messhias/students/blob/master/composer.json) files.
+All those libraries / system in [Dockerfile](docker/php/Dockerfile), 
+ [docker-compose.yml](docker-compose.yml) and 
+ [composer.json](composer.json) files.
  
  So if you go through the docker approach for run you don't need to care to 
  install manually those libraries / gear.
@@ -62,8 +62,8 @@ if you want to add new packages you can run:
 
 `docker-composer run composer composer require <package-name>`
 
-After set up the container you need to run the  [database.sql](https://github.com/Messhias/students/blob/master/database.sql)
- in your database, your the credentials containing in the [docker-compose.yml](https://github.com/Messhias/students/blob/master/docker-compose.yml)
+After set up the container you need to run the  [database.sql](database.sql)
+ in your database, your the credentials containing in the [docker-compose.yml](docker-compose.yml)
  file and done, you ready to go!
  
  ### Why I should use docker?
@@ -72,8 +72,8 @@ After set up the container you need to run the  [database.sql](https://github.co
  
  - Since everything's running inside the containers you don't need to do the exhausting workg to install everything.
  - The docker is based based on php-fpm image, you don't know you it? [So read about php-fpm](https://php-fpm.org/)
- - The [Dockerfile](https://github.com/Messhias/students/blob/master/docker/php/Dockerfile) it'll configure automatically the fpm pool and the 
-  [opcache](https://github.com/Messhias/students/blob/master/docker/php/conf.d/opcache.ini) features for you.
+ - The [Dockerfile](docker/php/Dockerfile) it'll configure automatically the fpm pool and the 
+  [opcache](docker/php/conf.d/opcache.ini) features for you.
   - If someting goes wrong you can easily delete the container.
   - After the user you can delete the container without affecting your operational system.
   - Since it's containers you can delete after the use without headaches about to damage your system.
@@ -104,7 +104,7 @@ After set up the container you need to run the  [database.sql](https://github.co
    
    For this framework to connect to database for nw isn't handled by 
    .env variables (at the end of this readme has the considerations). So
-   you need to change the connection in the [Config.php](https://github.com/Messhias/students/blob/master/App/Config.php), 
+   you need to change the connection in the [Config.php](App/Config.php), 
    on the future we can implement the .env files handler.
    
    
@@ -162,7 +162,7 @@ After set up the container you need to run the  [database.sql](https://github.co
 
 #Routing system:
 
-To route you need do it directly by [public/index.php](https://github.com/Messhias/students/blob/master/public/index.php) 
+To route you need do it directly by [public/index.php](public/index.php) 
 file.
 
 Here's an example of route:
@@ -233,7 +233,7 @@ and etc.
 You don't know what's repository pattern? 
 [Here's you can find a nice article for that](https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30) 
 
-All the controller extends the [ResourceController.php](https://github.com/Messhias/students/blob/master/App/Controllers/ResourceController.php).
+All the controller extends the [ResourceController.php](App/Controllers/ResourceController.php).
 
 
 #View systems:
@@ -257,11 +257,11 @@ All the views could be create in the `Views` folder with extension .html, .php w
 
  ```
  
- All the views system extends from [Views core application file](https://github.com/Messhias/students/blob/master/Core/View.php).
+ All the views system extends from [Views core application file](Core/View.php).
  
  #Models:
  
- You don't need to make your models extends the [Model application core](https://github.com/Messhias/students/blob/master/Core/Model.php) since the framework use 
+ You don't need to make your models extends the [Model application core](Core/Model.php) since the framework use 
  the repository pattern to do the layer beteween controller and model.
  
  But if for some reason you need to create a model without a repository 
@@ -329,7 +329,7 @@ All the views could be create in the `Views` folder with extension .html, .php w
  to you repository pattern (you can read more in Practices section) 
  to help you to implement SOLID principles into your application.
  
- By the default you can find [in this file](https://github.com/Messhias/students/blob/master/App/Repository/Repository.php) 
+ By the default you can find [in this file](App/Repository/Repository.php) 
  the default extends application repository, feel free to 
  update it, alter it.
  

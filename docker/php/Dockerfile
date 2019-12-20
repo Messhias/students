@@ -1,4 +1,4 @@
-FROM php:7.3-fpm
+FROM php:7.4-fpm
 
 # opcache configurations.
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="1" \

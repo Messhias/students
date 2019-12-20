@@ -1,4 +1,14 @@
-### gitignore updates (HEAD -> master)
+### updated dockerfile to handle php 7.4 and updated readme.md file (HEAD -> master)
+>Fri, 20 Dec 2019 22:55:34 +0400
+
+>Author: Fabio William Conceição (fabio@viame.ae)
+
+>Commiter: Fabio William Conceição (fabio@viame.ae)
+
+
+
+
+### gitignore updates (origin/master, origin/HEAD)
 >Fri, 20 Dec 2019 22:48:56 +0400
 
 >Author: Fabio William Conceição (fabio@viame.ae)
@@ -18,7 +28,7 @@
 
 
 
-### Create LICENSE (origin/master, origin/HEAD)
+### Create LICENSE
 >Sat, 22 Jun 2019 01:49:53 +0400
 
 >Author: Fabio William Conceição (messhias@gmail.com)
