@@ -2,6 +2,7 @@
 
 /**
  * @author Fabio William Conceição
+ * @email messhias@gmail.com
  */
 
 // class namespace.

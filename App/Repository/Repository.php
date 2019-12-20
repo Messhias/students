@@ -1,6 +1,7 @@
 <?php
 /**
  * @author Fabio William Conceição
+ * @email messhias@gmail.com
  */
 
 namespace App\Repository;

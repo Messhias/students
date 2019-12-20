@@ -115,6 +115,7 @@ After set up the container you need to run the  [database.sql](https://github.co
   
   /**
    * @author Fabio William Conceição 
+   * @email messhias@gmail.com
    */
   
   namespace App;
@@ -286,6 +287,7 @@ All the views could be create in the `Views` folder with extension .html, .php w
  <?php
  /**
   * @author Fabio William Conceição
+  * @email messhias@gmail.com
   */
  
  namespace App\Models;
@@ -392,6 +394,7 @@ All the views could be create in the `Views` folder with extension .html, .php w
  <?php
  /**
   * @author Fabio William Conceição
+  * @email messhias@gmail.com
   */
  
  namespace App\Repository;
